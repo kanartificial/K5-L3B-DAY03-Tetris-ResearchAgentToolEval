@@ -1,0 +1,2 @@
+# Keep exact bytes so tools_hash in runs/version_log stays reproducible on every OS (v4+).
+starter_v0/artifacts/tools.yaml -text

@@ -139,7 +139,10 @@ Lấy từ `starter_v0/transcripts/*.transcript.json`.
 
 | Turn | User Request | Tool Calls | Version Evidence | Outcome |
 |---|---|---|---|---|
-|  |  |  |  |  |
+| 1 | `hi` | None | `v0` · `gpt-4o-mini` · `v0+p46fe3af13372+tb177a8d37d23` | PASS – Agent phản hồi lời chào bằng tiếng Anh. |
+| 2 | `today is ?` | None | `v0` · `gpt-4o-mini` · `v0+p46fe3af13372+tb177a8d37d23` | FAIL – Agent trả lời sai ngày hiện tại (October 5, 2023). |
+| 3 | `bạn có thể nói tiếng việt ko` | None | `v0` · `gpt-4o-mini` · `v0+p46fe3af13372+tb177a8d37d23` | PASS – Agent hiểu yêu cầu và phản hồi bằng tiếng Việt. |
+| 4 | `model đang dùng llm nào` | None | `v0` · `gpt-4o-mini` · `v0+p46fe3af13372+tb177a8d37d23` | PARTIAL – Agent xác nhận sử dụng OpenAI nhưng không nêu chính xác tên model đang chạy. |
 
 ### B5a. Required Evidence — Tool mới, unit test, UI
 
@@ -147,7 +150,7 @@ Lấy từ `starter_v0/transcripts/*.transcript.json`.
 |---|---|---|---|
 | Tool mới (`tools/<tên>/`) |  |  |  |
 | Unit test tool mới (≥ 3 test/tool) | `pytest` output (0 failed) |  |  |
-| UI (lệnh chạy + link dùng thử) |  |  |  |
+| UI (lệnh chạy + link dùng thử) | `starter_v0/app.py` |  |  |
 
 Tool unit tests: số test đã viết, và một ví dụ lỗi mà unit test bắt được nhưng eval không bắt được.
 

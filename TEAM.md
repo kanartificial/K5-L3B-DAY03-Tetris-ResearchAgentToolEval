@@ -13,7 +13,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 |        |      |       |        |         |
-|   2 |        |      |       |        |         |
+|   2 | Vương Thu Thảo | 2A202603966 |26ai.thaovt@vinuni.edu.vn | ThuThaoVuong | Frontend |
 
 ## Cá nhân
 

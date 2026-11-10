@@ -1,0 +1,6 @@
+{
+  "note_id": "28828669400f44f6a0812485304d201e",
+  "title": "ResNet",
+  "content": "This paper introduces Residual Networks (ResNets), which are deep neural networks that utilize skip connections to improve training and performance. The authors demonstrate that these networks can achieve state-of-the-art results on various benchmarks, including ImageNet.",
+  "source_url": "https://arxiv.org/pdf/1512.03385"
+}

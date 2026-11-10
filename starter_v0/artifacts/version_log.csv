@@ -1,1 +1,2 @@
 version,author,changed_artifact,artifact_version,prompt_hash,tools_hash,reason,hypothesis,metric_before,metric_after,run_file
+v0,team,baseline,v0+pf0c107a9d7a1+t41a2894f8ad1,f0c107a9d7a14032c948d642d7c36f2a85cb6d69a099530093a874c94d472446,41a2894f8ad1b5f1af946a1ebd34dc809faa05f187393d1fb770540a67c9074a,baseline,Đo hành vi chưa tối ưu trước khi sửa; metric=summary.case_accuracy,,0.75,runs/v0_B_base_openai_20261110T173129593859.json

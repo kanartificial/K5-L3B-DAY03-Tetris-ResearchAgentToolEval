@@ -73,7 +73,7 @@ Lấy từ `starter_v0/artifacts/version_log.csv` và `starter_v0/runs/*.json`. 
 | Version | Changed Artifact | Hypothesis | Metric Before | Metric After | Run File |
 |---|---|---|---:|---:|---|
 | v0 | baseline | Đo hành vi chưa tối ưu trước khi sửa; metric = `summary.case_accuracy` | — | 0.70 (14/20) | [v0_B_base_openai_20261110T174608830282.json](../../starter_v0/runs/v0_B_base_openai_20261110T174608830282.json) |
-| v1 | `system_prompt.md` | Chỉ dẫn "đừng hỏi lại, cứ đoán" của starter khiến model bịa handle/URL. Bỏ chỉ dẫn đó, yêu cầu hỏi lại khi thiếu handle/URL để giảm `missing_info` (R10, R11). | 0.70 (14/20) | 0.85 (17/20) | [v1_B_base_openai_20261110T183231184157.json](../../starter_v0/runs/v1_B_base_openai_20261110T183231184157.json) |
+| v1 | `system_prompt.md` | Chỉ dẫn "đừng hỏi lại, cứ đoán" của starter khiến model bịa handle/URL. Bỏ chỉ dẫn đó, yêu cầu hỏi lại khi thiếu handle/URL để giảm `out_of_scope`,`missing_info` (R10, R11). | 0.70 (14/20) | 0.85 (17/20) | [v1_B_base_openai_20261110T183231184157.json](../../starter_v0/runs/v1_B_base_openai_20261110T183231184157.json) |
 | v2 | `system_prompt.md` | Ở v1 model vẫn điền placeholder (`screenname="your_twitter_handle"`, `url="https://example.com"`) vì rule hỏi lại còn mềm và câu "pick one tool… best judgment" còn sót. Thêm rule bắt buộc gọi `clarify` khi thiếu argument, cấm URL placeholder, chỉ `fetch` khi có URL. | 0.85 (17/20) | 0.90 (18/20) | [v2_B_base_openai_20261110T191121924811.json](../../starter_v0/runs/v2_B_base_openai_20261110T191121924811.json) |
 | v3 | `system_prompt.md` | Ở v2 model gọi đúng `clarify` nhưng bỏ `response_type` (R11) hoặc xin nội dung thay vì xác nhận gửi (R12), vì prompt không nêu quy ước `response_type` và còn câu "cứ gửi luôn". Thay câu đó bằng quy ước `text` / `yes_no` / `choice` và rule xác nhận trước khi `send`. | 0.90 (18/20) | 1.00 (20/20) | [v3_B_base_openai_20261110T194744125722.json](../../starter_v0/runs/v3_B_base_openai_20261110T194744125722.json) |
 
@@ -150,7 +150,7 @@ Lấy từ `starter_v0/transcripts/*.transcript.json`.
 |---|---|---|---|
 | Tool mới (`tools/<tên>/`) |  |  |  |
 | Unit test tool mới (≥ 3 test/tool) | `pytest` output (0 failed) |  |  |
-| UI (lệnh chạy + link dùng thử) | `starter_v0/app.py` |  |  |
+| UI (lệnh chạy + link dùng thử) | `starter_v0/app.py` | Xây dựng giao diện web bằng Streamlit, hỗ trợ người dùng chat với Research Agent, lựa chọn Provider/Model/Version. Chạy local bằng `streamlit run app.py`. Đã triển khai UI và có link truy cập trực tuyến: [Dùng thử Research Agent](https://hobbies-merit-buyers-copyrighted.trycloudflare.com). | Cần cấu hình API key hợp lệ; không công khai API key hoặc thông tin nhạy cảm. |
 
 Tool unit tests: số test đã viết, và một ví dụ lỗi mà unit test bắt được nhưng eval không bắt được.
 

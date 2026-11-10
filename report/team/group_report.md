@@ -36,10 +36,17 @@ Ví dụ: "Research agent: tìm tin theo từ khóa / theo tài khoản, đọc 
 
 | Tên tool | Làm được gì | Tool mới nhóm thêm? |
 |---|---|---|
-| clarify | hỏi lại người dùng khi thiếu thông tin | không |
-|  |  |  |
-|  |  |  |
-
+| clarify | Hỏi lại người dùng khi thiếu hoặc chưa rõ thông tin. | Không |
+| timeline | Lấy các bài đăng mới nhất từ tài khoản X/Twitter cụ thể. | Không |
+| social_search | Tìm kiếm bài đăng trên mạng xã hội theo từ khóa. | Không |
+| lookup | Tìm kiếm thông tin, bài viết trên Internet. | Không |
+| fetch | Truy cập URL và lấy nội dung trang web. | Không |
+| format | Định dạng nội dung theo yêu cầu của người dùng. | Không |
+| send | Gửi nội dung qua kênh được hỗ trợ. | Không |
+| policy | Tra cứu thông tin về chính sách hoặc quy định. | Không |
+| papers | Tìm kiếm bài báo khoa học theo chủ đề hoặc từ khóa. | Không |
+| paper_text | Truy xuất nội dung bài báo khoa học để nghiên cứu hoặc tóm tắt. | Không |
+| save_note | Lưu ghi chú gồm tiêu đề, nội dung và URL nguồn thành file JSON sau khi được xác nhận. | Có |
 ### A3. Câu hỏi mẫu để thử
 
 > 3–5 câu hỏi/yêu cầu mẫu để team khác tự thử agent ngay.

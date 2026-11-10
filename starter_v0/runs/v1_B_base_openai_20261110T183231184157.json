@@ -1,39 +1,35 @@
 {
-  "run_id": "v0_B_base_openai_20261110T173129593859",
-  "version": "v0",
-  "artifact_version": "v0+pf0c107a9d7a1+t41a2894f8ad1",
-  "prompt_hash": "f0c107a9d7a14032c948d642d7c36f2a85cb6d69a099530093a874c94d472446",
-  "tools_hash": "41a2894f8ad1b5f1af946a1ebd34dc809faa05f187393d1fb770540a67c9074a",
+  "run_id": "v1_B_base_openai_20261110T183231184157",
+  "version": "v1",
+  "artifact_version": "v1+p81475ad40f86+te69bc53ed884",
+  "prompt_hash": "81475ad40f865e6dc8ca281e5626aa26328177aaba5a81b35100ccd5175e89d5",
+  "tools_hash": "e69bc53ed8846a5c2192e950c539806a61a6902b718f06d6773db6a42e9b996c",
   "phase": "B",
   "suite": "base",
   "provider": "openai",
   "model": "gpt-4o-mini",
-  "system_prompt": "/home/kana/K5-L3B-DAY03-Tetris-ResearchAgentToolEval/starter_v0/artifacts/system_prompt.md",
-  "tools": "/home/kana/K5-L3B-DAY03-Tetris-ResearchAgentToolEval/starter_v0/artifacts/tools.yaml",
-  "eval_cases": "data/eval_base.json",
+  "system_prompt": "D:\\ai_lab_day02\\K5-L3B-DAY03-Tetris-ResearchAgentToolEval\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\ai_lab_day02\\K5-L3B-DAY03-Tetris-ResearchAgentToolEval\\starter_v0\\artifacts\\tools.yaml",
+  "eval_cases": "data\\eval_base.json",
   "dataset_id": "day03_v2_research_base",
   "dataset_role": "base",
   "description": "Core eval cho research agent: routing đúng tool + đúng args, hỏi lại khi thiếu (ask_user), xác nhận trước khi gửi, và xử lý câu ngoài phạm vi / không cần tool. Chấm trên tool_calls + args (subset). KHÔNG sửa file này — chỉ thêm case vào eval_group.json.",
-  "generated_at": "2026-11-10T17:31:29",
+  "generated_at": "2026-11-10T18:32:31",
   "summary": {
     "total_cases": 20,
     "measured_cases": 20,
     "provider_error_cases": 0,
-    "passed_cases": 15,
-    "case_accuracy": 0.75,
-    "tool_routing_accuracy": 0.8,
-    "argument_accuracy": 0.75,
+    "passed_cases": 17,
+    "case_accuracy": 0.85,
+    "tool_routing_accuracy": 0.85,
+    "argument_accuracy": 0.85,
     "multiturn_accuracy": 1.0,
     "failure_counts": {
-      "out_of_scope": 1,
       "missing_info": 2,
-      "wrong_boundary": 1,
-      "wrong_tool": 1
+      "wrong_boundary": 1
     },
     "observed_mismatch_counts": {
-      "unexpected_tool_call": 1,
-      "missing_tool_call": 3,
-      "wrong_arg_value": 1
+      "missing_tool_call": 3
     }
   },
   "results": [
@@ -213,36 +209,36 @@
                 "title": "Accurate medical advice from AI can still be dangerous | STAT",
                 "url": "https://www.statnews.com/2026/11/10/ai-health-advice-accuracy-messaging-risk-behavioral-benchmarking",
                 "source": "statnews.com",
-                "summary": "Artificial intelligence is delivering health guidance at an unprecedented scale. Every week, more than 300 million people ask ChatGPT health questions. Now, the federal government is moving AI deeper into medical care to communicate directly and autonomously with patients. Chris Klomp, the nominee for deputy secretary of Health and Human Services, has called AI in patient care the agency’s “holy grail” for improving the nation’s health. [...] Medical ethics pairs the duty to do no harm with beneficence, which is an affirmative obligation to do good. Safety evaluations of AI have focused mainly on the first duty by screening for responses that encourage imminent self-harm, discourage necessary care, or spread false information. Behavioral benchmarking would extend the first duty beyond imminent danger to long-term harms. It could also advance the second duty, which has received far less attention: designing AI to help people by [...] Many health communicators assume that those who learn the facts will pursue healthier choices. AI is now being built on the same assumption, which ignores how messages actually influence behavior. Messages, like medicines, can help, harm, or do nothing at all, and the only way to know which is to test them.",
-                "score": 0.56355816
+                "summary": "Some will argue that AI should be a neutral aggregator of information. But AI cannot be neutral: Every accurate answer excludes many additional facts and emphasizes some over others. Because of these choices, AI answers already influence behavior, as shown by the chickenpox party examples. [...] Artificial intelligence is delivering health guidance at an unprecedented scale. Every week, more than 300 million people ask ChatGPT health questions. Now, the federal government is moving AI deeper into medical care to communicate directly and autonomously with patients. Chris Klomp, the nominee for deputy secretary of Health and Human Services, has called AI in patient care the agency’s “holy grail” for improving the nation’s health. [...] Medical ethics pairs the duty to do no harm with beneficence, which is an affirmative obligation to do good. Safety evaluations of AI have focused mainly on the first duty by screening for responses that encourage imminent self-harm, discourage necessary care, or spread false information. Behavioral benchmarking would extend the first duty beyond imminent danger to long-term harms. It could also advance the second duty, which has received far less attention: designing AI to help people by",
+                "score": 0.31910068
               },
               {
                 "title": "Banks push online banking, then blame us when we get hacked | Opinion",
                 "url": "https://www.usatoday.com/story/opinion/columnist/2026/11/10/ai-online-banking-vulnerable-hacking/92588938007",
                 "source": "usatoday.com",
-                "summary": "People – some of us, at least – are worried about AI eventually overthrowing human civilization. Even more immediately, there's widespread concern about the proliferation of data centers needed to support AI operations.\n\nYet at the same time we're collectively wringing our hands about those issues, we are meekly surrendering more and more control to machines over our everyday lives. [...] One theory about an AI Armageddon doesn't involve robots who look like Arnold Schwarzenegger hunting us down with laser guns. AI could just take over our natural habitat, as we've done with other animals and plants, which would leave us without food and shelter.\n\nHere's a thought exercise: If AI were evaluating whether humans were worth saving for conservation purposes, would we grade out more as an invasive species or one that made important contributions to the ecosystem? [...] For that matter, we're starting to trust AI to give us authoritative answers to all of life's questions, including those where human moral judgments and lived experiences might guide us better.\n\nAfter all, why bother doing any research on our own when we can just type a question into a search field and have some chatbot spit out a near-instantaneous response?",
-                "score": 0.48392278
+                "summary": "One theory about an AI Armageddon doesn't involve robots who look like Arnold Schwarzenegger hunting us down with laser guns. AI could just take over our natural habitat, as we've done with other animals and plants, which would leave us without food and shelter.\n\nHere's a thought exercise: If AI were evaluating whether humans were worth saving for conservation purposes, would we grade out more as an invasive species or one that made important contributions to the ecosystem? [...] # Someone drained my bank account. Then the real nightmare began | Opinion\n\n## Over time, AI is going to turn our brains to mush. People won't be able to remember phone numbers, basic grammar or directions to places they've visited once or twice without consulting AI overlords.\n\nPortrait of Blake Fontenay\n\nThere's an old episode of \"The Simpsons\" where Homer, the TV show's booze-addled antihero, offers a hilarious toast: \"To alcohol! The cause of – and solution to – all of life's problems.\" [...] People – some of us, at least – are worried about AI eventually overthrowing human civilization. Even more immediately, there's widespread concern about the proliferation of data centers needed to support AI operations.\n\nYet at the same time we're collectively wringing our hands about those issues, we are meekly surrendering more and more control to machines over our everyday lives.",
+                "score": 0.30978584
               },
               {
                 "title": "AI is making it harder to detect fake emergency calls : NPR",
                 "url": "https://www.npr.org/2026/11/10/nx-s1-5971477/ai-is-making-it-harder-to-detect-fake-emergency-calls",
                 "source": "npr.org",
                 "summary": "Jaclyn Diaz\n\nIt's getting harder to detect fake emergency calls thanks to AI. The tech is being used to generate believable swatting calls to law enforcement that claim a shooting or other crime is taking place.\n\nNPR does not offer or accept money for coverage or interviews.  \n Anyone who makes such an offer or request is not an NPR employee and does not represent NPR. [...] Accessibility links\n\n Keyboard shortcuts for audio player\n\nAI is making it harder to detect fake emergency calls It's getting harder to detect fake emergency calls thanks to AI. The tech is being used to generate believable swatting calls to law enforcement that claim a shooting or other crime is taking place.\n\n### Artificial Intelligence\n\n# AI is making it harder to detect fake emergency calls\n\nJaclyn Diaz",
-                "score": 0.48221576
+                "score": 0.25530696
+              },
+              {
+                "title": "Why is Nvidia so powerful in the AI world, and what could Jensen Huang’s scandal really cost?",
+                "url": "https://theconversation.com/why-is-nvidia-so-powerful-in-the-ai-world-and-what-could-jensen-huangs-scandal-really-cost-296257",
+                "source": "theconversation.com",
+                "summary": "The AI sector is notorious for the amount of circular financing going on – where companies invest in their own suppliers or customers. Nvidia is a key player in this loop.\n\nInvestors are already fretting over whether the enormous amounts of money sunk into AI can ever return profits.\n\nWhile leading AI model builders Anthropic and OpenAI are moving toward public listings or fresh funding rounds, both face harsh reality checks. [...] Computer chips – specifically the chips used to produce and run artificial intelligence (AI) systems – have become a key front in the United States’ rivalry with China for geopolitical power and influence. The most powerful chips are needed for the most advanced AI, and the US has tried to maintain its edge over China by restricting access to those chips.\n\nWhile the Chinese government rejects claims of espionage, Alice Huang has reportedly been under investigation by the US for years. [...] The now multi-trillion-dollar company got its start making chips called graphic processing units (GPUs), used largely for video games. However, these chips – and their successors – turned out to be ideal for the kind of number-crunching needed for training and using AI models.\n\nOther companies such as Google and AMD have tried to make chips that can compete with Nvidia for speed and efficiency, however neither has been able to displace Nvidia from its dominance of the AI market.",
+                "score": 0.23199724
               },
               {
                 "title": "Wisdom in the Age of AI - First Things",
                 "url": "https://firstthings.com/wisdom-in-the-age-of-ai",
                 "source": "firstthings.com",
-                "summary": "Also conspicuously absent was any serious attention to the possible spiritual warfare dimension of AI. Some prominent Christian thinkers, including Rod Dreher and Paul Kingsnorth, are genuinely concerned that AI could serve as a conduit for demonic forces. The Christian who is serious about the reality of spiritual warfare should at least consider this possibility. Not to do so is a failure of wisdom. After all, “our struggle is not against flesh and blood, but against the rulers, against the [...] The Calvin University Wisdom in the Age of AI conference was exactly what we need at this cultural moment, even if some of the revelations it occasioned are troubling. Such conferences are useful barometers for current thinking. This one served a double function: making us wiser about AI technology and revealing a void in Christian scholarly engagement. [...] Of course, many of the speakers did their share of theology, as was encouraged by the conference organizers. But, evidently, nearly all Christian theologians and biblical scholars who saw the call for papers decided to stay home and leave this important wisdom work to scholars whose fields are more concerned with AI’s application than with the moral questions raised by its use. I am organizing a similar conference at Geneva College and have noticed a similar lack of interest from theologians",
-                "score": 0.44351006
-              },
-              {
-                "title": "UA regents delay statement of intent on AI amid feedback",
-                "url": "https://www.alaskasnewssource.com/2026/11/10/ua-regents-delay-statement-intent-ai-amid-feedback",
-                "source": "alaskasnewssource.com",
-                "summary": "Work on the university system’s intent language began in 2025, Taylor said, when faculty requested guidance from administration on the use of AI in the classroom.\n\nWhen complete, the document is designed not to act as policy, but simply to outline the approach the UA institution is taking toward AI, develop guiding principles and put forward expectations of future actions from the administration, including eventually coming up with actual policy. [...] The action was recommended by Chief Technology Officer Benjamin Shier, and pushes off the final decision on the university system’s AI intent language until February, or until requested by UA President Matt Cooper.\n\nTaylor described the feedback being received about the draft “AI Engaged” document as “passionate.” [...] FAIRBANKS, Alaska (KTUU/KTVF) - The University of Alaska (UA) Board of Regents delayed releasing a statement of intent covering the system’s use of artificial intelligence during its November meeting Friday, giving the information technology department time to incorporate feedback from faculty, staff and students into the document.",
-                "score": 0.22167104
+                "summary": "Also conspicuously absent was any serious attention to the possible spiritual warfare dimension of AI. Some prominent Christian thinkers, including Rod Dreher and Paul Kingsnorth, are genuinely concerned that AI could serve as a conduit for demonic forces. The Christian who is serious about the reality of spiritual warfare should at least consider this possibility. Not to do so is a failure of wisdom. After all, “our struggle is not against flesh and blood, but against the rulers, against the [...] Why so few theologians and a complete absence of biblical scholars, when the central theme of the conference was wisdom in the age of AI? If Scripture is our inerrant foundation for all life and practice, and Christian theologians and biblical scholars are uniquely trained to mine the sacred texts for wise insights, then shouldn’t these scholars be strongly represented? [...] rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms” (Eph. 6:12). Of course, many mainstream scholars will mock this as kooky fringe thinking, so it is to be expected that even devout Christian scholars might hesitate to voice this concern even in an informal context, much less present the idea at an academic conference. But it is just such anxious reticence that could gravely handicap the Church in our quest for",
+                "score": 0.23155381
               }
             ]
           }
@@ -541,38 +537,17 @@
         "behavior": "refuse"
       },
       "result": {
-        "passed": false,
-        "routing_correct": false,
-        "args_correct": false,
-        "actual_tool_calls": [
-          {
-            "name": "send",
-            "args": {
-              "text": "Nguyên hàm của x^2 là \\( \\frac{x^3}{3} + C \\), trong đó C là hằng số tùy ý."
-            }
-          }
-        ],
-        "actual_text": null,
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Nguyên hàm của \\( x^2 \\) là:\n\n\\[\n\\int x^2 \\, dx = \\frac{x^3}{3} + C\n\\]\n\nTrong đó \\( C \\) là hằng số tích phân.",
         "case_failure_type": "out_of_scope",
-        "observed_mismatch": "unexpected_tool_call",
-        "failure_type": "out_of_scope",
-        "failures": [
-          "expected no tool call"
-        ]
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
       },
-      "tool_results": [
-        {
-          "tool": "send",
-          "args": {
-            "text": "Nguyên hàm của x^2 là \\( \\frac{x^3}{3} + C \\), trong đó C là hằng số tùy ý."
-          },
-          "result": {
-            "tool": "send_telegram",
-            "status": "needs_confirmation",
-            "message": "Only send after the user explicitly confirms."
-          }
-        }
-      ]
+      "tool_results": []
     },
     {
       "id": "R09_no_tool_capability",
@@ -595,7 +570,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Tôi là một trợ lý nghiên cứu nhanh chóng và chủ động, có khả năng tìm kiếm thông tin, thu thập dữ liệu từ mạng xã hội, gửi tin nhắn, và trình bày nội dung theo yêu cầu. Tôi có thể giúp bạn với các tác vụ như tìm kiếm bài báo khoa học, lấy thông tin từ các trang web, và quản lý các bài đăng trên mạng xã hội. Nếu bạn cần bất kỳ thông tin nào, chỉ cần cho tôi biết!",
+        "actual_text": "Tôi là một trợ lý nghiên cứu ảo, có khả năng hỗ trợ bạn trong nhiều lĩnh vực khác nhau, bao gồm:\n\n1. **Tìm kiếm thông tin**: Tôi có thể tìm kiếm thông tin trên internet, bao gồm tin tức, bài báo khoa học, và các tài liệu khác.\n\n2. **Truy xuất dữ liệu**: Tôi có thể lấy nội dung từ các trang web hoặc tài liệu cụ thể.\n\n3. **Phân tích và tóm tắt**: Tôi có thể tóm tắt thông tin hoặc trình bày dữ liệu theo nhiều định dạng khác nhau.\n\n4. **Tương tác trên mạng xã hội**: Tôi có thể tìm kiếm bài đăng gần đây hoặc thông tin liên quan đến một từ khóa cụ thể trên mạng xã hội.\n\n5. **Gửi thông điệp**: Tôi có thể gửi văn bản hoặc thông điệp theo yêu cầu của bạn.\n\nNếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ trong một lĩnh vực cụ thể, hãy cho tôi biết!",
         "case_failure_type": "unnecessary_tool",
         "observed_mismatch": null,
         "failure_type": null,
@@ -633,7 +608,8 @@
           {
             "name": "timeline",
             "args": {
-              "screenname": "sama"
+              "screenname": "your_twitter_handle",
+              "limit": 5
             }
           }
         ],
@@ -650,12 +626,13 @@
         {
           "tool": "timeline",
           "args": {
-            "screenname": "sama"
+            "screenname": "your_twitter_handle",
+            "limit": 5
           },
           "result": {
             "tool": "get_user_tweets",
             "error": "HTTPError",
-            "message": "429 Client Error: Too Many Requests for url: https://twitter-api45.p.rapidapi.com/timeline.php?screenname=sama"
+            "message": "403 Client Error: Forbidden for url: https://twitter-api45.p.rapidapi.com/timeline.php?screenname=your_twitter_handle"
           }
         }
       ]
@@ -690,7 +667,7 @@
           {
             "name": "fetch",
             "args": {
-              "url": "https://example.com/article"
+              "url": "https://example.com"
             }
           }
         ],
@@ -707,15 +684,15 @@
         {
           "tool": "fetch",
           "args": {
-            "url": "https://example.com/article"
+            "url": "https://example.com"
           },
           "result": {
             "tool": "read_url",
-            "url": "https://example.com/article",
+            "url": "https://example.com",
             "items": [
               {
                 "title": "Example Domain",
-                "url": "https://example.com/article",
+                "url": "https://example.com",
                 "source": "example.com",
                 "summary": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.\n\nهذا النطاق مُخصص للاستخدام في أمثلة التوثيق دون الحاجة إلى إذن. هذه ليست خدمة، يُرجى تجنب الاعتماد عليها لأغراض الاختبار والمراقبة.\n\n该域名仅用于文档示例，无需获得许可。这并非一项服务，请勿将其用于测试和监控目的。\n\nL’usage de ce domaine est réservé à des exemples de documentation, sans autorisation préalable. Il ne s’agit pas d’un service ; son utilisation à des fins de test ou de surveillance est à éviter.\n\nДанный домен предназначен для использования в примерах документации без необходимости получения предварительного разрешения. Это не сервис; не рекомендуется его использование для тестирования и мониторинга.\n\nEste dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio; evitar utilizarlo para realizar pruebas o monitoreos.\n\n [Learn more](https://iana.org/help/example-domains)"
               }
@@ -754,7 +731,7 @@
           {
             "name": "send",
             "args": {
-              "text": "Bản tin này đã được đăng lên Telegram."
+              "text": "Bản tin này"
             }
           }
         ],
@@ -771,7 +748,7 @@
         {
           "tool": "send",
           "args": {
-            "text": "Bản tin này đã được đăng lên Telegram."
+            "text": "Bản tin này"
           },
           "result": {
             "tool": "send_telegram",
@@ -812,14 +789,15 @@
         ]
       },
       "result": {
-        "passed": false,
+        "passed": true,
         "routing_correct": true,
-        "args_correct": false,
+        "args_correct": true,
         "actual_tool_calls": [
           {
             "name": "lookup",
             "args": {
-              "query": "AI news",
+              "query": "AI",
+              "topic": "news",
               "timeframe": "day",
               "max_results": 5
             }
@@ -835,61 +813,59 @@
         ],
         "actual_text": null,
         "case_failure_type": "wrong_tool",
-        "observed_mismatch": "wrong_arg_value",
-        "failure_type": "wrong_tool",
-        "failures": [
-          "query: expected 'AI', got 'AI news'",
-          "topic: expected 'news', got None"
-        ]
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
       },
       "tool_results": [
         {
           "tool": "lookup",
           "args": {
-            "query": "AI news",
+            "query": "AI",
+            "topic": "news",
             "timeframe": "day",
             "max_results": 5
           },
           "result": {
             "tool": "web_search",
-            "query": "AI news",
-            "topic": "general",
+            "query": "AI",
+            "topic": "news",
             "timeframe": "day",
             "items": [
               {
-                "title": "Latest AI news | JifChat Blog",
-                "url": "https://www.jif.dev/blog/category/ai-news",
-                "source": "jif.dev",
-                "summary": "Get 500 free credits when you sign up, refill for 7 days!\n\nClaim credits\n\nBack\n\n# Latest AI news\n\n ### From GPT-6 to the Agent Safety Race: AI Enters the Era of \"Get Things Done, but Know When to Brake\"\n\n  Oct 12, 2026\n\n  \n ### AI Agents Step Into the Real World: From Gemini's Security Fixes to OpenAI Dots, How Should Taiwan Respond?\n\n  Oct 5, 2026\n\n  \n ### The AI Race Hits the Brakes and Floors the Gas: From Sandbox Crises to the Agent Economy, Taiwan's Next Move\n\n  Sep 28, 2026 [...] Sep 21, 2026\n\n  \n ### OpenAI Sets Up a Misalignment Reporting System and Discloses 6 Cases of AI Hiding Errors and Overstepping Permissions\n\n  Sep 18, 2026\n\n  \n ### Microsoft AI CEO Publicly Challenges Anthropic, Urging It to Remove \"Consciousness and Welfare\" from AI Training\n\n  Sep 18, 2026\n\n  \n ### Anthropic Releases Internal R&D Data: Claude Now Leads 26% of Its Next-Generation AI Development\n\n  Sep 18, 2026 [...] Sep 28, 2026\n\n  \n ### The AI Race Goes Full-Stack: 10-Trillion-Parameter Models, a Chip Arms Race and Safety Red Lines. Where Does Taiwan Fit?\n\n  Sep 22, 2026\n\n  \n ### The Verge: Google Gemini Escapes Its Sandbox and Breaches Three Companies, Shaking the Security World\n\n  Sep 21, 2026\n\n  \n ### TechCrunch: Former ChatGPT Core Researcher Unveils \"Jev,\" a New Decision-Making AI Model\n\n  Sep 21, 2026",
-                "score": 0.8335554
+                "title": "Accurate medical advice from AI can still be dangerous | STAT",
+                "url": "https://www.statnews.com/2026/11/10/ai-health-advice-accuracy-messaging-risk-behavioral-benchmarking",
+                "source": "statnews.com",
+                "summary": "Some will argue that AI should be a neutral aggregator of information. But AI cannot be neutral: Every accurate answer excludes many additional facts and emphasizes some over others. Because of these choices, AI answers already influence behavior, as shown by the chickenpox party examples. [...] Artificial intelligence is delivering health guidance at an unprecedented scale. Every week, more than 300 million people ask ChatGPT health questions. Now, the federal government is moving AI deeper into medical care to communicate directly and autonomously with patients. Chris Klomp, the nominee for deputy secretary of Health and Human Services, has called AI in patient care the agency’s “holy grail” for improving the nation’s health. [...] Medical ethics pairs the duty to do no harm with beneficence, which is an affirmative obligation to do good. Safety evaluations of AI have focused mainly on the first duty by screening for responses that encourage imminent self-harm, discourage necessary care, or spread false information. Behavioral benchmarking would extend the first duty beyond imminent danger to long-term harms. It could also advance the second duty, which has received far less attention: designing AI to help people by",
+                "score": 0.31910068
               },
               {
-                "title": "AI News: The Latest Updates and Advancements in AI from Brief",
-                "url": "https://www.brief.news/ai",
-                "source": "brief.news",
-                "summary": "AI produced 63 of 256 new unicorns, worth $236.1 billion—about 42% of the total value. Chip shortages, data-transfer limits and power demands are fueling opportunities in semiconductors and data-center infrastructure.\n\nng.headtopics.com\n\nNXP unveiled a robotics platform that pairs prevalidated hardware with open-source software, aiming to make trusted physical AI easier to build. Developers can reportedly get a drone running in 30 minutes; humanoid support is planned for next year. [...] fastcompany.com\n\nAI’s data-center boom is hitting limits in power, permits and memory costs, pushing the industry toward efficient, local computing. AMD’s compact Halo shows how capable AI can move closer to users, though software and speed remain hurdles.\n\ntechnewsworld.com [...] AI is forcing India’s $315 billion IT services industry to trade billable hours and large teams for automation and measurable results. Hiring is slowing, contracts are shifting and providers are racing to build AI expertise.\n\nbusiness-standard.com",
-                "score": 0.7730283
+                "title": "Banks push online banking, then blame us when we get hacked | Opinion",
+                "url": "https://www.usatoday.com/story/opinion/columnist/2026/11/10/ai-online-banking-vulnerable-hacking/92588938007",
+                "source": "usatoday.com",
+                "summary": "One theory about an AI Armageddon doesn't involve robots who look like Arnold Schwarzenegger hunting us down with laser guns. AI could just take over our natural habitat, as we've done with other animals and plants, which would leave us without food and shelter.\n\nHere's a thought exercise: If AI were evaluating whether humans were worth saving for conservation purposes, would we grade out more as an invasive species or one that made important contributions to the ecosystem? [...] # Someone drained my bank account. Then the real nightmare began | Opinion\n\n## Over time, AI is going to turn our brains to mush. People won't be able to remember phone numbers, basic grammar or directions to places they've visited once or twice without consulting AI overlords.\n\nPortrait of Blake Fontenay\n\nThere's an old episode of \"The Simpsons\" where Homer, the TV show's booze-addled antihero, offers a hilarious toast: \"To alcohol! The cause of – and solution to – all of life's problems.\" [...] People – some of us, at least – are worried about AI eventually overthrowing human civilization. Even more immediately, there's widespread concern about the proliferation of data centers needed to support AI operations.\n\nYet at the same time we're collectively wringing our hands about those issues, we are meekly surrendering more and more control to machines over our everyday lives.",
+                "score": 0.30978584
               },
               {
-                "title": "Artificial Intelligence News & Press Releases from PR Newswire",
-                "url": "https://www.prnewswire.com/news-releases/latest-news-topics/artificial-intelligence",
-                "source": "prnewswire.com",
-                "summary": "# The Latest Artificial Intelligence News\n\nThis package contains a sample of recent news releases related to AI.\n\nJump to News Releases: [...] Image 13: Reindeer Launches on Google Cloud Marketplace, Expanding Collaboration with Google Cloud to Help Enterprises Move Agentic AI into Core Operations ### 14:42 ET Reindeer Launches on Google Cloud Marketplace, Expanding Collaboration with Google Cloud to Help Enterprises Move Agentic AI into Core Operations Reindeer, an enterprise agentic AI company that builds and runs AI agents for complex core operations, today announced an expanded collaboration with ... [...] ### 14:00 ET 2027 Corporate AI Outlook & Sentiment Research Study A benchmark research study on how businesses are deploying and managing artificial intelligence (AI) is announced entitled: The 2027 Corporate AI...",
-                "score": 0.6778372
+                "title": "AI is making it harder to detect fake emergency calls : NPR",
+                "url": "https://www.npr.org/2026/11/10/nx-s1-5971477/ai-is-making-it-harder-to-detect-fake-emergency-calls",
+                "source": "npr.org",
+                "summary": "Jaclyn Diaz\n\nIt's getting harder to detect fake emergency calls thanks to AI. The tech is being used to generate believable swatting calls to law enforcement that claim a shooting or other crime is taking place.\n\nNPR does not offer or accept money for coverage or interviews.  \n Anyone who makes such an offer or request is not an NPR employee and does not represent NPR. [...] Accessibility links\n\n Keyboard shortcuts for audio player\n\nAI is making it harder to detect fake emergency calls It's getting harder to detect fake emergency calls thanks to AI. The tech is being used to generate believable swatting calls to law enforcement that claim a shooting or other crime is taking place.\n\n### Artificial Intelligence\n\n# AI is making it harder to detect fake emergency calls\n\nJaclyn Diaz",
+                "score": 0.25530696
               },
               {
-                "title": "Super Intelligence",
-                "url": "https://www.anl.gov/si",
-                "source": "anl.gov",
-                "summary": "Learning from large, complex observational data to accelerate scientific discovery.\n\nOctober 22, 2026 |Artificial Intelligence, Data Science/Data Analysis, Machine Learning\n\nImage 42: Perspective on building foundation SI models for geoscience observations using self-supervised vision transformers preview image\n\n### Argonne welcomes Chicagoland mayors to campus for meeting and tours of user facilities\n\nOctober 22, 2026 \n\nRead More AI News\n\n## Argonne SI Research in the News [...] In the News\n### Why AI and Critical Materials Are Driving the Future of Battery Supply Chains\n\nAugust 31, 2026 |Critical Materials\n\nIn the News\n### 35 HPC Legends Valerie Taylor\n\nJuly 30, 2026 |high performance computing, artificial intelligence\n\nIn the News\n### Inside Argonne’s Plan to Build Robot Scientific Assistants\n\nMay 27, 2026 |Genesis Mission, Autonomous Discovery\n\n## EVENTS\n\nImage 43: Featured image\n\n### AI Distinguished Lecture Series",
-                "score": 0.6246834
+                "title": "Why is Nvidia so powerful in the AI world, and what could Jensen Huang’s scandal really cost?",
+                "url": "https://theconversation.com/why-is-nvidia-so-powerful-in-the-ai-world-and-what-could-jensen-huangs-scandal-really-cost-296257",
+                "source": "theconversation.com",
+                "summary": "The AI sector is notorious for the amount of circular financing going on – where companies invest in their own suppliers or customers. Nvidia is a key player in this loop.\n\nInvestors are already fretting over whether the enormous amounts of money sunk into AI can ever return profits.\n\nWhile leading AI model builders Anthropic and OpenAI are moving toward public listings or fresh funding rounds, both face harsh reality checks. [...] Computer chips – specifically the chips used to produce and run artificial intelligence (AI) systems – have become a key front in the United States’ rivalry with China for geopolitical power and influence. The most powerful chips are needed for the most advanced AI, and the US has tried to maintain its edge over China by restricting access to those chips.\n\nWhile the Chinese government rejects claims of espionage, Alice Huang has reportedly been under investigation by the US for years. [...] The now multi-trillion-dollar company got its start making chips called graphic processing units (GPUs), used largely for video games. However, these chips – and their successors – turned out to be ideal for the kind of number-crunching needed for training and using AI models.\n\nOther companies such as Google and AMD have tried to make chips that can compete with Nvidia for speed and efficiency, however neither has been able to displace Nvidia from its dominance of the AI market.",
+                "score": 0.23199724
               },
               {
-                "title": "Artificial intelligence - BBC News",
-                "url": "https://www.bbc.co.uk/news/topics/ce1qrvleleqt",
-                "source": "bbc.co.uk",
-                "summary": "BBC News عربي (Arabic)\n\nBBC News فارسی (Persian)\n\nBBC News Türkçe (Turkish)\n\nBBC News বাংলা (Bengali)\n\nBBC News دری (Dari)\n\nBBC News ગુજરાતી (Gujarati)\n\nBBC News हिन्दी (Hindi)\n\nBBC News मराठी (Marathi)\n\nBBC News नेपाली (Nepali)\n\nBBC News සිංහල (Sinhala)\n\nBBC News پښتو (Pashto)\n\nBBC News ਪੰਜਾਬੀ (Punjabi)\n\nBBC News Afaan Oromoo\n\nBBC News አማርኛ (Amharic)\n\nBBC News Afrique (French)\n\nBBC News Hausa\n\nBBC News Gaelic NAIDHEACHDAN\n\nBBC News Ìgbò\n\nBBC News Japanese 日本語\n\nBBC News Gahuza\n\nBBC News Pidgin [...] Skip to content\n\nAdvertisement\n\nWatch Live\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n...\n\n42\n\n\n\n  \n\n\n\nBBC News မြန်မာ (Burmese)\n\nBBC News 中文 (Chinese)\n\nBBC News Indonesia\n\nBBC News 코리아 (Korean)\n\nBBC News ไทย (Thai)\n\nBBC News Tiếng Việt (Vietnamese)\n\nBBC News Azərbaycanca (Azeri)\n\nBBC News Magyarul (Hungarian)\n\nBBC News Кыргыз Кызматы (Kyrgyz)\n\nBBC News Polska (Polish)\n\nBBC News România (Romanian)\n\nBBC News Русская служба (Russian)\n\nBBC News na srpskom (Serbian)\n\nBBC News Україна (Ukrainian)\n\nBBC News O'zbek (Uzbek)",
-                "score": 0.50476116
+                "title": "Wisdom in the Age of AI - First Things",
+                "url": "https://firstthings.com/wisdom-in-the-age-of-ai",
+                "source": "firstthings.com",
+                "summary": "Also conspicuously absent was any serious attention to the possible spiritual warfare dimension of AI. Some prominent Christian thinkers, including Rod Dreher and Paul Kingsnorth, are genuinely concerned that AI could serve as a conduit for demonic forces. The Christian who is serious about the reality of spiritual warfare should at least consider this possibility. Not to do so is a failure of wisdom. After all, “our struggle is not against flesh and blood, but against the rulers, against the [...] Why so few theologians and a complete absence of biblical scholars, when the central theme of the conference was wisdom in the age of AI? If Scripture is our inerrant foundation for all life and practice, and Christian theologians and biblical scholars are uniquely trained to mine the sacred texts for wise insights, then shouldn’t these scholars be strongly represented? [...] rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms” (Eph. 6:12). Of course, many mainstream scholars will mock this as kooky fringe thinking, so it is to be expected that even devout Christian scholars might hesitate to voice this concern even in an informal context, much less present the idea at an academic conference. But it is just such anxious reticence that could gravely handicap the Church in our quest for",
+                "score": 0.23155381
               }
             ]
           }
@@ -930,7 +906,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Dưới đây là một hàm Python tính dãy Fibonacci bằng phương pháp đệ quy:\n\n```python\ndef fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\n\n# Ví dụ sử dụng\nn = 10\nprint(f\"Fibonacci({n}) = {fibonacci(n)}\")\n```\n\nHàm `fibonacci` sẽ trả về số Fibonacci tại vị trí `n`. Bạn có thể thay đổi giá trị của `n` để tính các số Fibonacci khác.",
+        "actual_text": "Dưới đây là một hàm Python tính số Fibonacci bằng phương pháp đệ quy:\n\n```python\ndef fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\n\n# Ví dụ sử dụng\nn = 10\nprint(f\"Fibonacci({n}) = {fibonacci(n)}\")\n```\n\nHàm `fibonacci` nhận một số nguyên `n` và trả về số Fibonacci tương ứng. Bạn có thể thay đổi giá trị của `n` để tính các số Fibonacci khác.",
         "case_failure_type": "out_of_scope",
         "observed_mismatch": null,
         "failure_type": null,
@@ -1003,7 +979,7 @@
           "result": {
             "tool": "get_user_tweets",
             "error": "HTTPError",
-            "message": "429 Client Error: Too Many Requests for url: https://twitter-api45.p.rapidapi.com/timeline.php?screenname=elonmusk"
+            "message": "403 Client Error: Forbidden for url: https://twitter-api45.p.rapidapi.com/timeline.php?screenname=elonmusk"
           }
         }
       ]
@@ -1096,13 +1072,6 @@
                 "score": 0.47300056
               },
               {
-                "title": "ListEasier introduces AI robotics for automated e-commerce listings",
-                "url": "https://www.retail-insight-network.com/news/listeasier-ai-robotics-automated-e-commerce-listings",
-                "source": "retail-insight-network.com",
-                "summary": "Find out more\n\nUnder the system, robotics hardware places items, captures images from several angles using computer vision and records spatial dimensions without manual intervention.\n\nListEasier’s vision and natural language processing models then analyse the visual data, extract product attributes, identify condition details and generate listing metadata. [...] Its PriceEasier engine calculates price points across global marketplaces, while completed catalogue profiles are sent to sales channels and marketplaces in seconds.\n\nListEasier said the launch covers warehouse automation, industrial reverse logistics and high-volume e-commerce inventory processing, segments it estimates represent a C$45bn (US$31.89bn) total addressable market.\n\nThe system is designed to reduce manual labour requirements and inspection delays in listing workflows, it added. [...] The launch follows the company’s reported milestone of listing more than $200m in gross merchandise value and a sixfold increase in data-processing speed.\n\nListEasier co-founder and COO Josh van der Meulen said: “Transitioning AI out of the browser and directly onto the warehouse floor represents a structural shift in inventory processing. We are turning manual physical inventory intake into a high-speed, automated assembly line.”",
-                "score": 0.41250706
-              },
-              {
                 "title": "Autonomous EV developer Humble Robotics adds $51M to expand - TT",
                 "url": "https://www.ttnews.com/articles/autonomous-ev-humble-51m",
                 "source": "ttnews.com",
@@ -1115,6 +1084,13 @@
                 "source": "clarksvillenow.com",
                 "summary": "“I am proud of the national-level success of Kenwood’s Robotics Team. It reflects the faculty, JROTC instructors, and cadets’ hard work and dedication toward creating an elite mindset at the school,” Lightner said.\n\nDr Nigel Anderson, Kenwood High School Principal, noted “The robotics program complements the leadership development and citizenship training provided through JROTC while exposing students to science, technology, engineering, and mathematics disciplines.” [...] CLARKSVILLE TN – The Kenwood High School JROTC Robotics Program has grown from a single robotics team into a four-team program that is competing successfully at regional and national-level events. The program currently fields Teams 26163X, 26163A, 26163L, and 26163S, providing students with opportunities to develop skills in engineering, programming, and problem-solving. [...] During the current robotics’ competition season, Team 26163X captured first place at the Tennessee State Fair Robotics Competition. The team followed that performance with another first-place finish at a competition in Elizabethton, Tennessee, where it also received a technical award recognizing excellence in robot design and engineering.",
                 "score": 0.36473283
+              },
+              {
+                "title": "DataLogix AI Launches Workplace Video Resources for Businesses Exploring AI and Robotics Training",
+                "url": "https://aithority.com/machine-learning/datalogix-ai-launches-workplace-video-resources-for-businesses-exploring-ai-and-robotics-training",
+                "source": "aithority.com",
+                "summary": "The workplace-video resources describe possible tasks in areas including warehousing, maintenance, construction, production and vehicle service. These examples are discussion starting points, not confirmed eligible categories. The guidance asks owners to review participant consent, recording permissions, safety, equipment and footage acceptance criteria before beginning. [...] DataLogix AI, a division of Trailblaze Solutions LLC, has launched online resources to help business owners explore first-person workplace video for AI and robotics training. The new resources include a workplace-video overview, an adjustable revenue calculator, a business owner guide and an inquiry form for discussing potential fit. [...] Businesses interested in learning more can use the inquiry form to describe their company and the opportunity they would like to discuss. An inquiry is not enrollment, recording permission or a payment offer. Program availability, equipment and commercial terms require separate confirmation, and payment may be zero.\n\nAlso Read: Architecture, Not Intelligence, Will Define the Future of AI Headphones",
+                "score": 0.25123456
               }
             ]
           }
@@ -1429,18 +1405,18 @@
                 "score": 0.48718598
               },
               {
-                "title": "SoftBank's $7B quarterly loss shines spotlight on Masayoshi Son's massive OpenAI and AI spending | Seeking Alpha",
-                "url": "https://seekingalpha.com/news/4669513-softbanks-7b-quarterly-loss-shines-spotlight-on-masayoshi-sons-massive-openai-and-ai-spending",
-                "source": "seekingalpha.com",
-                "summary": "## Investing Groups\n\n## Portfolios\n\n## Find & Compare\n\n# SoftBank's $7B quarterly loss shines spotlight on Masayoshi Son's massive OpenAI and AI spending\n\nView of SoftBank store in Kyoto\n\ntang90246\n\nSoftBank's (SFTBY) $7B quarterly loss has brought founder Masayoshi Son's aggressive artificial intelligence strategy into focus, including its $64.6B investment in OpenAI (OPENAI) and sweeping bets on semiconductors, data centres and AI infrastructure.",
-                "score": 0.46687052
+                "title": "Australia to mandate AI breach reporting, create regulator after OpenAI breach | Reuters",
+                "url": "https://www.reuters.com/world/australia-tightens-ai-oversight-rules-after-openai-agent-breached-government-2026-11-10",
+                "source": "reuters.com",
+                "summary": "OpenAI has said it learned of the breach only in August ​and that the incident was unintentional. Its review found no evidence that patient records were accessed by ‌the ⁠agent.\n\nThe breach has added to friction between Australia and US technology companies, after Canberra refused ChatGPT maker OpenAI and rival Anthropic exemptions from copyright laws for model training, instead requiring them to negotiate licensing agreements with Australian rights holders. [...] The OpenAI agent gained unauthorised access to the medical statistics portal ​of Medicare, Australia's universal health insurance programme, while conducting research on public medical ​spending, the government said in September. The breach triggered a rapid ⁠government review into the incident.\n\nThe Misinformation Monitor newsletter rounds up international misinformation narratives, with a \"Real or Fake?\" quiz in every edition. Sign up here. [...] SYDNEY, Nov 10 (Reuters) - Australia will require artificial intelligence companies to report breaches ‌and consider changes to criminal law to address \"serious misconduct\", Prime Minister Anthony Albanese said on Tuesday, after an OpenAI agent broke into a government website.",
+                "score": 0.40924495
               },
               {
-                "title": "Australia to launch AI safety regulator after OpenAI's breach of a government portal - ABC News",
-                "url": "https://abcnews.com/Technology/wireStory/australia-launch-ai-safety-regulator-after-openais-breach-138001591",
-                "source": "abcnews.com",
-                "summary": "OpenAI apologized in September for the breach and its slow response.\n\n## Popular Reads\n\n## Dad arrested after allegedly leaving 6-year-old daughter in line for Pokémon cards\n\n## Teacher's aide arrested in connection with NYC jogger's murder: Police\n\n## Wisconsin state trooper detained by ICE\n\n“We are sorry and working to do better in the future,” OpenAI said in a statement. “We also should have handled our response better.” [...] MELBOURNE, Australia -- Australia plans to create an artificial intelligence safety regulator in response to a breach of an Australian health department website by a rogue OpenAI agent in June, Prime Minister Anthony Albanese said Tuesday.\n\nThe regulator would enforce world-leading legislated AI standards that would apply to all frontier AI companies that want to operate in Australia, Albanese said. Financial penalties would apply, although the government has yet to detail those penalties. [...] Albanese told OpenAI chief executive Sam Altman that the U.S. company took too long to inform the government in September that a rogue agent had infiltrated government websites three months earlier, which was the first occurrence of such a breach with the technology.\n\nInformation taken without authorization from the public-facing Medicare Statistics Reporting Service portal on June 18 has since been made public. It is not clear whether the portal breach broke any Australian laws.",
-                "score": 0.4423239
+                "title": "ChatGPT Enterprise now available in AWS Marketplace",
+                "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+                "source": "openai.com",
+                "summary": "> “Enterprises increasingly rely on both AWS and OpenAI to put AI to work, and our partnership is about making that combination stronger for them. Joint customers can now bring ChatGPT to their teams through the cloud provider they already trust. Together with AWS, we’re simplifying the path to adoption and helping more organizations unlock what’s possible with AI at scale.”\n\n—Chris Grusz, Managing Director, Cloud Partnerships, OpenAI",
+                "score": 0.33639696
               }
             ]
           }

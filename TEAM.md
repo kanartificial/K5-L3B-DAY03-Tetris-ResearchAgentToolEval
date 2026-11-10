@@ -2,10 +2,11 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Lớp: L3A / L3B
-- Repo nhóm: `K5-L3A-DAY03-TenNhom-ResearchAgentToolEval` hoặc `K5-L3B-DAY03-TenNhom-ResearchAgentToolEval` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Tên nhóm: Tetris
+- Lớp: L3B
+- Repo nhóm: `K5-L3B-DAY03-Tetris-ResearchAgentToolEval`
+- URL repo: https://github.com/kanartificial/K5-L3B-DAY03-Tetris-ResearchAgentToolEval
+- Nhánh nộp, commit chốt: chưa chốt.
 
 ## Thành viên
 

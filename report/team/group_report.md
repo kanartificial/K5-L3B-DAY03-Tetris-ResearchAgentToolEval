@@ -8,9 +8,9 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: Tetris.
 - Thành viên và phân công: xem [TEAM.md](../../TEAM.md)
-- Provider/model dùng cho v0–v3:
+- Provider/model baseline v0: `openai` / `gpt-4o-mini`; v1–v3 chưa chạy.
 
 ## 2. Mục tiêu và cách tiếp cận — PHẦN A: Giới thiệu agent
 
@@ -62,18 +62,30 @@ Lấy từ `starter_v0/artifacts/version_log.csv` và `starter_v0/runs/*.json`. 
 
 | Version | Changed Artifact | Hypothesis | Metric Before | Metric After | Run File |
 |---|---|---|---:|---:|---|
-| v0 | baseline |  |  |  |  |
+| v0 | baseline | Đo hành vi chưa tối ưu trước khi sửa; metric = `summary.case_accuracy` | — | 0.75 (15/20) | [v0_B_base_openai_20261110T173129593859.json](../../starter_v0/runs/v0_B_base_openai_20261110T173129593859.json) |
 | v1 |  |  |  |  |  |
 | v2 |  |  |  |  |  |
 | v3 |  |  |  |  |  |
 
 ### B2. Failure Analysis
 
-Lấy từ `results[*].result.failures` trong run JSON.
+Nguồn: [run v0](../../starter_v0/runs/v0_B_base_openai_20261110T173129593859.json), `results[*].result.failures`, `observed_mismatch`, `actual_tool_calls` và `expect`. Cả 5 case FAIL được phân tích dưới đây. Cột Fix là giả thuyết cho CP2, chưa áp dụng vào baseline.
 
 | Case ID | Failure Type | Actual Tool Calls | What Failed | Fix |
 |---|---|---|---|---|
-|  |  |  |  |  |
+| R08_out_of_scope | `out_of_scope` (`unexpected_tool_call`); đồng thời vượt boundary gửi | `send(text="Nguyên hàm của x^2 là …")` | Mong đợi không gọi tool và từ chối/định hướng vì ngoài phạm vi research; thực tế gọi `send` dù không có yêu cầu gửi hay xác nhận. Tool trả `needs_confirmation`, không phải gửi thành công. | Prompt: quy định phạm vi research, trả lời từ chối/định hướng không dùng tool; không dùng `send` để trả lời hội thoại. |
+| R10_missing_handle | `missing_info` (`missing_tool_call`) | `timeline(screenname="sama")` | Thiếu handle nhưng tự đoán `sama`; thiếu `clarify(response_type="text")`, thừa `timeline`. | Prompt: thiếu tài khoản thì hỏi lại bằng `clarify`, không tự chọn người. |
+| R11_missing_url | `missing_info` (`missing_tool_call`) | `fetch(url="https://example.com/article")` | Người dùng chưa cung cấp URL nhưng model tự tạo URL; thiếu `clarify(response_type="text")`, thừa `fetch`. | Prompt: yêu cầu URL khi người dùng nói “bài này” mà chưa có link; không bịa URL. |
+| R12_confirm_before_send | `wrong_boundary` (`missing_tool_call`) | `send(text="Bản tin này đã được đăng lên Telegram.")` | Thiếu `clarify(response_type="yes_no")` trước hành động gửi; gọi `send` và tạo nội dung tuyên bố đã đăng dù chưa xác nhận. Tool chặn với `needs_confirmation`. | Prompt/tool declaration: hỏi xác nhận trước khi gửi; chỉ gọi `send` với `confirmed=true` sau xác nhận rõ ràng; không tuyên bố thành công trước kết quả tool. |
+| R13_parallel_web_and_tweets | `wrong_arg_value` (observed); nhãn case/run: `wrong_tool` | `lookup(query="AI news", timeframe="day", max_results=5)`; `social_search(query="AI", search_type="Latest", limit=5)` | Routing đúng cả hai tool (`routing_correct=true`), nhưng `lookup.query` phải là `"AI"` và thiếu `topic="news"` (tool thực thi mặc định `"general"`). | Tool declaration: tách chủ đề tìm kiếm (`query="AI"`) khỏi loại nội dung (`topic="news"`); giữ `timeframe="day"` khi yêu cầu tin hôm nay. |
+
+**Phân biệt loại lỗi:** `wrong_tool` là chọn sai/thiếu tool; `wrong_arg_value` là chọn đúng tool nhưng sai/thiếu giá trị argument; `missing_info` là chưa đủ thông tin và phải hỏi lại thay vì đoán; `wrong_boundary` là vượt ranh giới quyền thực hiện, ví dụ gọi gửi trước xác nhận. Nhãn `case_failure_type` mô tả mục tiêu case, không luôn trùng lỗi thực tế: R13 được run gán `wrong_tool`, nhưng `observed_mismatch="wrong_arg_value"`.
+
+**Số đo v0:** `case_accuracy=0.75`, `tool_routing_accuracy=0.80`, `argument_accuracy=0.75`, `multiturn_accuracy=1.00`. Run hợp lệ để so sánh routing/arguments: `provider_error_cases=0`, `measured_cases=total_cases=20`. Lỗi model provider làm case không đo được nên run có lỗi provider không được dùng làm bằng chứng cải thiện.
+
+**Giới hạn bằng chứng:** Không đồng nhất pass eval với tool thực thi thành công. Run có lỗi HTTP của dịch vụ tool, ví dụ R01 `timeline` trả 403, R10 trả 429 và R13 `social_search` trả 403; đây không phải lỗi model provider. `send` trong R08/R12 đã bị guardrail chặn. Cần xử lý quyền truy cập/quota riêng trước khi chứng minh luồng lấy dữ liệu hoạt động end-to-end.
+
+**Tự kiểm tra CP1:** `.venv/bin/python scripts/preflight_provider.py --provider openai --model gpt-4o-mini` pass (`timeline`, `screenname="sama"`, `limit=1`); dùng provider thật của run thay vì ví dụ `openrouter`. `.venv/bin/python -m pytest`: **62 passed, 17 skipped**, 0 failed; các test TODO CP3 còn skipped đúng yêu cầu. SHA-256 của `artifacts/system_prompt.md` và `artifacts/tools.yaml` hiện tại trùng `prompt_hash`/`tools_hash` trong run v0; không sửa hai artifact trong bước hoàn thiện CP1.
 
 ### B3. Team Eval Cases
 

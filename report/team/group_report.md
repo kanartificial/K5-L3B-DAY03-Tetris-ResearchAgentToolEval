@@ -64,7 +64,7 @@ Lấy từ `starter_v0/artifacts/version_log.csv` và `starter_v0/runs/*.json`. 
 |---|---|---|---:|---:|---|
 | v0 | baseline | Đo hành vi chưa tối ưu trước khi sửa; metric = `summary.case_accuracy` | — | 0.75 (15/20) | [v0_B_base_openai_20261110T173129593859.json](../../starter_v0/runs/v0_B_base_openai_20261110T173129593859.json) |
 | v1 | `system_prompt.md` | Loại bỏ chỉ dẫn tự suy đoán thông tin còn thiếu, yêu cầu hỏi lại khi thiếu account handle hoặc URL bắt buộc để giảm lỗi `missing_info`. | 0.75 (15/20) | 0.85 (17/20) | [v1_B_base_openai_20261110T183231184157.json](../../starter_v0/runs/v1_B_base_openai_20261110T183231184157.json) |
-| v2 |  |  |  |  |  |
+| v2 | `system_prompt.md` | Loại bỏ cơ chế tự suy đoán thông tin khi thiếu account handle hoặc URL để giảm lỗi missing_info | 0.85 (17/20) | 0.90 (18/20) | (../../starter_v0/runs/v2_B_base_openai_20261110T191121924811.json) |
 | v3 |  |  |  |  |  |
 
 ### B2. Failure Analysis

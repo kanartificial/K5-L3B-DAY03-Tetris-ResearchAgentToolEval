@@ -123,3 +123,15 @@ tools:
         max_pages: {type: integer, default: 5, description: "Số trang"}
         max_chars: {type: integer, default: 8000, description: "Số ký tự"}
       required: [arxiv_url]
+
+  # ---------------- Team tools ----------------
+  - name: save_note
+    description: "Lưu ghi chú nghiên cứu cùng URL nguồn vào file JSON cục bộ khi người dùng yêu cầu lưu rõ ràng và đã xác nhận. Không tìm kiếm, đọc URL, đọc lại ghi chú hay gửi Telegram. Thiếu tiêu đề, nội dung hoặc URL nguồn thì hỏi lại bằng clarify; không bịa nguồn. Chỉ đặt confirmed=true sau xác nhận rõ ràng của người dùng."
+    parameters:
+      type: object
+      properties:
+        title: {type: string, minLength: 1, description: "Tiêu đề ghi chú, không được để trống"}
+        content: {type: string, minLength: 1, description: "Nội dung nghiên cứu cần lưu, không được để trống"}
+        source_url: {type: string, minLength: 1, description: "URL nguồn của thông tin đã có; không tự tạo URL"}
+        confirmed: {type: boolean, default: false, description: "Chỉ true khi người dùng đã xác nhận rõ ràng việc lưu ghi chú"}
+      required: [title, content, source_url]

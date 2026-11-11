@@ -9,3 +9,11 @@ pypdf>=4.0.0
 # Tool unit tests:
 pytest>=8.0.0
 streamlit
+
+# Optional public tunnel: cloudflared (standalone binary, not installed by pip).
+# Linux amd64 installation:
+# mkdir -p ~/.local/bin
+# curl -fL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o ~/.local/bin/cloudflared
+# chmod +x ~/.local/bin/cloudflared
+# Verify: ~/.local/bin/cloudflared --version
+# Run: ~/.local/bin/cloudflared tunnel --url http://localhost:8501

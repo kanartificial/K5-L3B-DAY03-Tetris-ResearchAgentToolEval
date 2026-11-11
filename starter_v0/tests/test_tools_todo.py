@@ -1,8 +1,3 @@
-"""Offline tool unit tests based on test_tools_examples.py.
-
-HTTP calls use fake_http, and conftest.py isolates API keys and blocks real network.
-Run with: pytest tests/ -v.
-"""
 from __future__ import annotations
 
 import json

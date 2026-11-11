@@ -14,7 +14,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Lý Hà Trân Trân | 2A202603968 | 26ai.tranlht@vinuni.edu.vn | TranHa161 | Prompt/tool declaration v3–v4, eval, báo cáo |
 |   2 | Vương Thu Thảo | 2A202603966 |26ai.thaovt@vinuni.edu.vn | ThuThaoVuong | prompt declaration v1, Frontend demo |
-|   3 | Khổng Ngọc Anh | 2A202603974 | 26ai.anhkn2@vinuni.edu.vn | kanartificial (commit: kana) | Baseline CP1, tool `save_note`, unit tests, hỗ trợ demo |
+|   3 | Khổng Ngọc Anh | 2A202603974 | 26ai.anhkn2@vinuni.edu.vn | kanartificial | Baseline CP1, tool `save_note`, unit tests, hỗ trợ demo |
 | 4 | Võ Thị Kim Ý | 2A202603965 | 26ai.yvtk@vinuni.edu.vn | KimY22-it | v2-v3, unit test, eval_group |
 
 ## Cá nhân

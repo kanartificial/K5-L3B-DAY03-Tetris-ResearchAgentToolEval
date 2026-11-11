@@ -6,7 +6,7 @@
 - MSSV: 2A202603974
 - Email: 26ai.anhkn2@vinuni.edu.vn
 - Nhóm / lớp: Tetris / L3B
-- GitHub: `kanartificial`; tên tác giả commit: `kana`.
+- GitHub: `kanartificial`
 
 ## 2. Phần việc phụ trách
 
@@ -48,7 +48,7 @@
 
 ## 4. Bằng chứng
 
-| Commit của `kana` | Nội dung đối chiếu |
+| Commit | Nội dung đối chiếu |
 | --- | --- |
 | `4922ead` — First commit + Cp1 | Run baseline đầu tiên và dòng version log |
 | `958065b` — add group report | Thông tin nhóm, bảng baseline và phân tích 5 lỗi ban đầu |

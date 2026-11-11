@@ -1,0 +1,16 @@
+{
+  "transcript_id": "v0_openrouter_20261110T230820705289",
+  "version": "v0",
+  "artifact_version": "v0+p46fe3af13372+tb177a8d37d23",
+  "prompt_hash": "46fe3af133728b79fa89b48e6de7623397ed70272b20433cd539c7a05e6d594a",
+  "tools_hash": "b177a8d37d230df27f2182d348a70c7f3c3239b337a459ba73cc12563a945955",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "system_prompt": "D:\\ai_lab_day02\\K5-L3B-DAY03-Tetris-ResearchAgentToolEval\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\ai_lab_day02\\K5-L3B-DAY03-Tetris-ResearchAgentToolEval\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-11-10T23:08:20",
+  "updated_at": "2026-11-10T23:08:20",
+  "turns": []
+}

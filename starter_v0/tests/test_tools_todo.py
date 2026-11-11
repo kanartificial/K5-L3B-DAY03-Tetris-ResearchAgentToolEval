@@ -263,3 +263,64 @@ def test_save_note_storage_failure_returns_error_dict(tmp_path, monkeypatch) -> 
     assert result["error"] == "FileExistsError"
     assert "status" not in result
     assert notes_dir.read_text(encoding="utf-8") == "Existing file blocks directory creation"
+
+
+def test_save_note_generates_unique_ids(tmp_path, monkeypatch) -> None:
+    notes_dir = tmp_path / "notes"
+    monkeypatch.setattr(save_note_module, "NOTES_DIR", notes_dir)
+
+    first = TOOL_FUNCTIONS["save_note"](
+        title="Paper 1",
+        content="First research finding",
+        source_url="https://arxiv.org/abs/1706.03762",
+        confirmed=True,
+    )
+
+    second = TOOL_FUNCTIONS["save_note"](
+        title="Paper 2",
+        content="Second research finding",
+        source_url="https://arxiv.org/abs/2005.14165",
+        confirmed=True,
+    )
+
+    assert first["status"] == "saved"
+    assert second["status"] == "saved"
+
+    assert first["note_id"] != second["note_id"]
+
+    assert (notes_dir / f"{first['note_id']}.json").exists()
+    assert (notes_dir / f"{second['note_id']}.json").exists()
+
+    assert len(list(notes_dir.glob("*.json"))) == 2
+
+def test_save_note_rejects_invalid_confirmed_type(tmp_path, monkeypatch) -> None:
+    notes_dir = tmp_path / "notes"
+    monkeypatch.setattr(save_note_module, "NOTES_DIR", notes_dir)
+
+    result = TOOL_FUNCTIONS["save_note"](
+        title="Attention Is All You Need",
+        content="Transformer architecture",
+        source_url="https://arxiv.org/pdf/1706.03762",
+        confirmed="true",
+    )
+
+    assert result["error"] == "ValueError"
+    assert "status" not in result
+    assert not notes_dir.exists()
+
+def test_save_note_requires_confirmation(tmp_path, monkeypatch) -> None:
+    notes_dir = tmp_path / "notes"
+    monkeypatch.setattr(save_note_module, "NOTES_DIR", notes_dir)
+
+    result = TOOL_FUNCTIONS["save_note"](
+        title="Attention Is All You Need",
+        content="Transformer uses attention mechanisms",
+        source_url="https://arxiv.org/pdf/1706.03762",
+        confirmed=False,
+    )
+
+    assert result["tool"] == "save_note"
+    assert result["status"] == "needs_confirmation"
+    assert result["message"] == "Only save after the user explicitly confirms."
+
+    assert not notes_dir.exists()

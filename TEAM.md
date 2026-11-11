@@ -58,3 +58,27 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - Commit `0cf7acc`; `starter_v0/runs/v3_B_base_openai_20261110T194744125722.json`, `starter_v0/runs/v4_B_base_openai_20261111T014227776599.json`, `starter_v0/runs/v4_B_group_openai_20261111T014254803430.json`; `starter_v0/transcripts/v4_openai_20261111T014329378074.transcript.json`.
 - Báo cáo cá nhân: `report/team/2A202603968_LyHaTranTran.md`.
+
+## VuongThuThao-2A202603966
+
+### Phần việc phụ trách
+
+- Đề xuất và thực hiện cải tiến `system_prompt.md` dựa trên kết quả đánh giá thực nghiệm.
+- Xây dựng frontend cho hệ thống
+
+### Đóng góp cụ thể
+
+- Đề xuất giả thuyết loại bỏ việc tự suy đoán thông tin còn thiếu, yêu cầu người dùng bổ sung thông tin khi thiếu các tham số bắt buộc như account handle hoặc URL.
+- Chỉnh sửa `system_prompt.md` để triển khai giả thuyết và tạo phiên bản v1.
+- Xây dựng giao diện cho hệ thống
+
+### Bằng chứng
+
+- File/commit/PR:
+  - `starter_v0/artifacts/system_prompt.md`: Nội dung system prompt được điều chỉnh ở v1
+  - `starter_v0/app.py`: Giao diện của hệ thống
+- AI/công cụ đã dùng và cách tự kiểm tra kết quả:
+  - Sử dụng ChatGPT để hỗ trợ xây dựng giao diên, phân tích lỗi, đề xuất giả thuyết cải tiến và rà soát system prompt
+  - Sử dụng Python, `run_eval.py` và OpenAI provider để thực hiện các thử nghiệm
+
+

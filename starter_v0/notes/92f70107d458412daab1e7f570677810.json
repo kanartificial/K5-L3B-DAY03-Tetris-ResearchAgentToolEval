@@ -1,0 +1,6 @@
+{
+  "note_id": "92f70107d458412daab1e7f570677810",
+  "title": "Attention",
+  "content": "Bài báo này thảo luận về khái niệm cơ chế attention trong các mạng nơ-ron, đặc biệt trong bối cảnh xử lý ngôn ngữ tự nhiên và dịch máy. Nó giới thiệu ý tưởng sử dụng attention để cải thiện hiệu suất của các mô hình bằng cách cho phép chúng tập trung vào các phần cụ thể của dữ liệu đầu vào khi đưa ra dự đoán.",
+  "source_url": "https://arxiv.org/abs/1706.03762"
+}

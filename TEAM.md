@@ -15,6 +15,7 @@
 |   1 | Lý Hà Trân Trân | 2A202603968 | 26ai.tranlht@vinuni.edu.vn | TranHa161 | Prompt/tool declaration v3–v4, eval, báo cáo |
 |   2 | Vương Thu Thảo | 2A202603966 |26ai.thaovt@vinuni.edu.vn | ThuThaoVuong | Frontend |
 |   3 | Khổng Ngọc Anh | 2A202603974 | 26ai.anhkn2@vinuni.edu.vn | kanartificial (commit: kana) | Baseline CP1, tool `save_note`, unit tests, hỗ trợ demo |
+| 4 | Võ Thị Kim Ý | 2A202603965 | 26ai.yvtk@vinuni.edu.vn | KimY22-it | v2-v3, unit test, eval_group |
 
 ## Cá nhân
 
@@ -89,4 +90,31 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
   - Sử dụng ChatGPT để hỗ trợ xây dựng giao diên, phân tích lỗi, đề xuất giả thuyết cải tiến và rà soát system prompt
   - Sử dụng Python, `run_eval.py` và OpenAI provider để thực hiện các thử nghiệm
 
+
+## VoThiKimY - 2A202603965
+
+### Phần việc phụ trách
+- CP2 - v2 (`system_prompt.md`): phân tích các case còn FAIL ở v1, đặt giả thuyết H2, sửa prompt, chạy base eval v2 và ghi version_log.csv
+- CP3: viết >=3 test trong tests/test_tools_todo.py (happy path, input xấu từ model, nhánh lỗi)
+- CP4: Viết đúng 10 case trong data/eval_group.json (5 single turn query, 5 multi turn turns), mỗi case có failure_type, expect, metadata.what_it_tests; ít nhất 1 case kiểm tra route tới tool mới; chạy --suite group
+
+
+### Đóng góp cụ thể
+- Đề xuất giả thuyết "H2: Ở v1 model vẫn điền placeholder (your_twitter_handle, https://example.com) vì rule hỏi lại quá mềm và câu 'pick one tool... best judgment' còn sót; rule clarify bắt buộc sẽ sửa R10/R11"
+- Chỉnh sửa `system_prompt.md` để triển khai giả thuyết và tạo phiên bản v2.
+- Viết 3 test trong `tests/test_tools_todo.py` (happy path, input xấu từ model, nhánh lỗi) để test tool mới của nhóm và chạy pass 92/92 test case
+- Viết 10 case trong `data/eval_group.json` (5 single turn query, 5 multi turn turns), mỗi case có failure_type, expect, metadata.what_it_tests; ít nhất 1 case kiểm tra route tới tool mới; chạy test chạy phiên bản v2 trên `eval_group.json` và ghi nhận kết quả vào bảng `B3`
+- Viết bảng phân tích các tool hiên có trong ảng `A2`
+
+
+## #Bằng chứng
+
+- File/commit/PR:
+    - CP2 (commit: `ae9ca41`, `9ad5d79`): sửa file `\starter_v0\artifacts\system_prompt.md`, chạy `v2` tạo `\starter_v0\runs\v2_B_base_openai_20261110T191121924811.json`, bổ sung `version_log.csv` v2 và cập nhật bảng B1 trong `group_report.md`
+    - CP3 (commit: `4a016ef`): `\starter_v0\tests\test_tools_todo.py` 
+    - CP4 (commit: `d4d0278`): thêm test `\starter_v0\data\eval_group.json`, chạy `v3` trên `eval_group.json` tạo `\starter_v0\runs\v3_B_group_openai_20261110T225331460412.json` và cập nhật bảng `B3` trong `group_report.md`
+    - Bảng A2: `group_report.md`
+- AI/công cụ đã dùng và cách tự kiểm tra kết quả:
+    - Sử dụng ChatGPT để hỗ trợ xây dựng phân tích lỗi, đề xuất giả thuyết cải tiến và viết test
+    - Chạy pytest và run_eval.py trên OpenAI provider để thực hiện các thử nghiệm
 
